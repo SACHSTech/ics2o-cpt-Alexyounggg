@@ -47,32 +47,37 @@ while True:
     
     if shop_items == 1 and total >= 50 and item_one == True:
       item_one = False 
+      total -= 50
       print("You have bought item one!")
     
     elif shop_items == 2 and total >= 150 and item_two == True:
       item_two = False
+      total -= 150
       print("You have bought item two!")
 
     elif shop_items == 3 and total >= 300 and item_three == True:
       item_three = False
+      total -= 300
       print("You have bought item item three")
 
     elif shop_items == 4 and total >= 700 and item_four == True:
       item_three = False
+      total -= 700
       print("You have bought item four")
 
     elif shop_items == 5 and total >= 300 and item_five == True:
       item_three = False
       print("You have bought item five")
 
-    elif shop_items == 1 and total < 50 or shop_items == 2 and total < 150 or shop_items == 3 and total < 300 or shop_items == 4 and total < 700 or shop_items == 5 and total < 300 
+    elif shop_items == 1 and total < 50 or shop_items == 2 and total < 150 or shop_items == 3 and total < 300 or shop_items == 4 and total < 700 or shop_items == 5 and total < 300 and item_one and item_two and item_three and item_four and item_five == True:
+      print("You do not have enough money to buy the item.")
 
     elif item_one or item_two or item_three or item_four or item_five == False:
       print("You have bought this item already")
 
     
 
-
+git 
 
 
 
