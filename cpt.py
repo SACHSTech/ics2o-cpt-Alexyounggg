@@ -15,15 +15,16 @@ while money_claim != "money claim":
   money_claim = input("Please type money claim. Watch for capitals: ")
 
 if money_claim == "money claim":
-  total += 5000
-  print("You just claimed 1000 dollars")
+  total += 500
+  print("You just claimed 500 dollars")
 
 while True:
-  action = input("What would you like to do next?( Instruction,risk, shop): ")
+  action = input("What would you like to do next?( Instruction,risk,shop): ")
 
   if action == "instruction":
     print("You can also risk your money. There is a 50-50 odd to either gain or lose money.")
-    print("You can buy computer parts in the shop!")
+    print("You can buy computer parts in the shop! If you buy all the items you win the game!")
+    print("If you have 0 dollars, you lost the game. Reset the program to restart")
     
 
   elif action == "risk":
@@ -41,9 +42,10 @@ while True:
 
   elif action == "shop":
     shop_items = int(input("Welcome to the shop! Please pick a an item.\n 1. Gaming Mouse: $50 \n 2. Gaming Keyboard: $150 \n 3. I7 CPU: $300 \n 4. 3080 GPU: $700 \n 5. 144hrz monitor: $300 \n 6. Put the number here: "))
-    if shop_items >= 6:
+    while shop_items >= 6:
       shop_items = int(input("Please pick a number between 1-5: "))
-    elif shop_items == 1 and total >= 50 and item_one == True:
+    
+    if shop_items == 1 and total >= 50 and item_one == True:
       item_one = False 
       print("You have bought item one!")
     
@@ -53,7 +55,7 @@ while True:
 
     elif shop_items == 3 and total >= 300 and item_three == True:
       item_three = False
-      print("You have bought item item_three")
+      print("You have bought item item three")
 
     elif shop_items == 4 and total >= 700 and item_four == True:
       item_three = False
@@ -63,8 +65,12 @@ while True:
       item_three = False
       print("You have bought item five")
 
+    elif shop_items == 1 and total < 50 or shop_items == 2 and total < 150 or shop_items == 3 and total < 300 or shop_items == 4 and total < 700 or shop_items == 5 and total < 300 
+
     elif item_one or item_two or item_three or item_four or item_five == False:
       print("You have bought this item already")
+
+    
 
 
 
