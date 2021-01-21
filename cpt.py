@@ -12,7 +12,7 @@ item_five = True
 
 print("*** Welcome to the Computer Buyer Game ***")
 
-# Enter money claim to start the game
+# Input word to start the game
 money_claim = input("Enter 'money claim': ").lower()
 
 #Loop the code until user enters money claim
@@ -29,8 +29,10 @@ while game:
 
   if action == "instruction":
     print("-You can also risk your money.\n There is a 50-50 odd to either gain or lose money.")
+    print("-You can use money check to see your balance!")
+    print("-Money earn will give you 10 questions where you can answer\n to earn money")
     print("-You can buy computer parts in the shop! \n If you buy all the items you win the game!")
-    print("-If you have 0 dollars, you lose the game. \nReset the program to restart")
+    print("-If you have 0 dollars, you lose the game. \nYou will need to reset the program to play again")
     
 
   elif action == "risk":
@@ -104,38 +106,87 @@ while game:
     print("You have already done this test!")
   elif action == "money earn" and quiz == True:
     quiz = False 
-    print("You can only do these questions once per game. There will be five questions and every answer right will give you 100 dollars")
+    print("You can only do these questions once per game. There will be ten questions and every answer right will give you 50 dollars")
     question_one = input("1. What is not a part of a computer?\nA. Monitor B. Keyboard C. CPU D. Phone :")
     question_two = input("2. What is the correct computer malware?\nA. Adware B. Busy C. Scary D. Fizy : ")
     question_three = input("3. Which one is an operating system?\nA. Windows B. Sky C. Pear. D Skying : ")
-    question_four = input("4. How many bytes are in a kilobyte?\nA. 800 B. 1024 C. 1000. D. 500 : ")
-    question_five = input("What is part of the networking program?\nA. Fan B. Lights C. Modem D. Book : ")
-    
+    question_four = input("4. How many bytes are in a kilobyte?\nA. 800 B. 1024 C. 1000. D 500 : ")
+    question_five = input("5. What is part of the networking program?\nA. Fan B. Lights C. Modem D. Book : ")
+    question_six = input("6. What computer device is the brain of the computer?\nA. CPU B. GPU C. Motherboard D. RAM : ")
+    question_seven = input("7. How many bits are in a byte?\nA. 5 B. 6 C. 7 D. 8 : ")
+    question_eight = input("8. Which of the following is generally used to measure data transfer speed?\nA. Mbps B. Mhz C. Ghz D. MB/s : ")
+    question_nine = input("9. What does RAM stand for? Type your answer: ")
+    question_ten = input("10. What does GPU stand for? Type your answer: ")
 
     if question_one == "D".lower():
       count += 1 
+      print("1. Correct")
+    else:
+      print("1. Incorrect")
 
     if question_two == "A".lower():
       count += 1
+      print("2. Correct")
+    else:
+      print("2. Incorrect")
 
     if question_three == "A".lower():
       count += 1
+      print("3. Correct")
+    else:
+      print("3. Incorrect")
 
     if question_four == "B".lower():
       count += 1
+      print("4. Correct")
+    else:
+      print("4. Incorrect")
 
     if question_five == "C".lower():
       count += 1
+      print("5. Correct")
+    else:
+      print("5. Incorrect")
+    
+    if question_six == "A".lower():
+      count += 1
+      print("6. Correct")
+    else:
+      print("6. Incorrect")
+    
+    if question_seven == "D".lower():
+      count += 1
+      print("7. Correct")
+    else:
+      print("7. Incorrect")
+
+    if question_eight == "A".lower():
+      count+= 1
+      print("8. Correct")
+    else:
+      print("8. Incorrect")
+
+    if question_nine == "Random Access Memory".lower():
+      count += 1
+      print("9. Correct")
+    else:
+      print("9. Incorrect")
+    
+    if question_ten == "Graphics Processing Unit".lower():
+      count += 1
+      print("10. Correct")
+    else:
+      print("10. Incorrect")
     
     #Multiply to find the amount of money earned 
-    money_earn = count * 100
+    money_earn = count * 50
     total += money_earn
     
-    print("You got " +str(count)+ " out of 5. You have earned " +str(money_earn)+ ". Your new total is " +str(total)+ ".")
+    print("You got " +str(count)+ " out of 10. You have earned " +str(money_earn)+ ". Your new total is " +str(total)+ ".")
 
   
   else: 
-    print("Please enter instruction, risk, shop, or money check")
+    print("Please enter instruction, risk, shop, money check or money earn")
 
   # Break the program if all items are bought 
   if total > 0 and item_one == False and item_two == False and item_three == False and item_four == False and item_five == False:
