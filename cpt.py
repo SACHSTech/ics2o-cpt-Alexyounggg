@@ -1,7 +1,7 @@
 '''
 -------------------------------------------------------------------------------
 Name:		cpt.py
-Purpose:	A text based game where the user is able to gain or lose money within game either through a 50-50 chance odds or doing a set of questions. With the money they can buy items in the shop. If they buy all the items in the shop, they win the game. If the user eaches 0 dollars, they will lose the game. 
+Purpose:	A text based game where the user is able to gain or lose money witin the game either through a 50-50 chance or doing a set of questions. With the money they can buy items in the shop. If they buy all the items in the shop, they win the game. If the user reaches 0 dollars, they will lose the game. 
 
 Author:	Young.A
 
@@ -76,7 +76,7 @@ while game:
     while True:
       try: 
         shop_items = int(input("\nWelcome to the shop! Please pick an item.\n 1. Gaming Mouse: $50 \n 2. Gaming Keyboard: $150 \n 3. I7 CPU: $300 \n 4. 3080 GPU: $700 \n 5. 144hz monitor: $350 \n Put the number here: "))
-        while shop_items >= 6:
+        while shop_items >= 6 or shop_items <= 0:
           shop_items = int(input("Please pick a number between 1-5: "))
       except ValueError:
         print("Please type a number")
